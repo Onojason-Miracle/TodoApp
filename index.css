@@ -1,0 +1,94 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --font:system-ui;
+    --bgcolor:green;
+    --primarycolor:white;
+    --textsize:24px;
+    --tsize:18px;
+    --align:center;
+    --delete:red;
+}
+.navbarr{
+    background-color: var(--bgcolor);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--primarycolor);
+    width: 100%;
+}
+
+ul li input[type=text] {
+    display:none;
+  }
+  
+  ul li.editMode input[type=text] {
+    display:block;
+  }
+  
+  ul li.editMode span {
+    display:none;
+  }
+
+.todo-section{
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; */
+  margin-top: 20px;
+}
+
+.nav-ul{
+    display: flex;
+    padding-top: 10px;
+}
+
+nav-p{
+    padding: 30px 30px;
+    color: var(--primarycolor);
+   
+}  
+
+nav-div{
+    padding-top: 10px;
+    margin-left: 40px;
+}
+
+
+.nav-ul li{
+    list-style-type: none;
+
+}
+
+.nav-ul li a{
+    color: var(--primarycolor);
+    text-decoration: none;
+   padding: 30px 30px;
+   
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+margin-top: 50px;
+}
+
+.navigation-list-li{
+    list-style-type: none;
+    margin-top: 20px;
+   
+}
+.navigation-list{
+    display: flex;
+    flex-direction:column; 
+    align-items: center;
+    justify-content: center;
+}
+
+#input-field{
+   width: 30%; 
+}

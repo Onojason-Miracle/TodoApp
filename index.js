@@ -99,9 +99,27 @@ function formHandler(event){
 
 }
 
+let clearbtn = document.querySelector(".clear-btn")
+
+function clearUp(){
+input.value = " "
+}
+
+
+// clearbtn.addEventListener("click", clearUp)
+
 const formdata = document.querySelector("#form");
 formdata.addEventListener("submit", formHandler);
-// DeleteButton();
+const inputfield = document.querySelector("#input-field").value;
+const mimie=""
+
+if (typeof(Storage) !== "undefined") {
+ let m=   localStorage.setItem("input","klr")
+//  alert(m);
+    localStorage.getItem(input);
+  } else {
+ console.log("  Sorry! No Web Storage support..") 
+  }
 
     
 

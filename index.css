@@ -14,6 +14,28 @@
     --color:#00A774;
 }
 
+.home{
+  background-color: var(--color);
+  color: var(--primarycolor);
+
+}
+.homediv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.home-link{
+  text-decoration: none;
+  color: var(--color);
+ 
+}
+.home-btn{
+  border: none;
+ 
+}
+
 /* .wrapper{
   
 background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://images.pexels.com/photos/2672979/pexels-photo-2672979.jpeg?cs=srgb&dl=pexels-andrea-piacquadio-2672979.jpg&fm=jpg");

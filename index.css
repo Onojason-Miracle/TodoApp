@@ -5,57 +5,76 @@
 
 :root{
     --font:system-ui;
-    --bgcolor:green;
+    --bgcolor:#139D73;
     --primarycolor:white;
     --textsize:24px;
     --tsize:18px;
     --align:center;
     --delete:red;
+    --color:#00A774;
 }
-.navbarr{
+
+/* .wrapper{
+  
+background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://images.pexels.com/photos/2672979/pexels-photo-2672979.jpeg?cs=srgb&dl=pexels-andrea-piacquadio-2672979.jpg&fm=jpg");
+background-size: cover;
+background-position: center;
+color: var(--primarycolor);
+ width: 100%;
+} */
+.nav2{
+  text-align: center;
+  color: var(--color);
+  padding-top: 10px;
+}
+/* .divv{
+  background-color: var(--bgcolor);
+  
+} */
+/* .navbarr{
     background-color: var(--bgcolor);
     display: flex;
     justify-content: space-around;
     align-items: center;
     color: var(--primarycolor);
     width: 100%;
-}
-
-ul li input[type=text] {
-    display:none;
-  }
-  
-  ul li.editMode input[type=text] {
-    display:block;
-  }
-  
-  ul li.editMode span {
-    display:none;
-  }
+} */
 
 .todo-section{
-  /* display: flex;
+  display: flex;
+  margin-top: 50px;
+  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  flex-direction: column; */
-  margin-top: 20px;
+ 
+  gap: 60px;
 }
 
-.nav-ul{
+.imgdiv2{
+  height: 600px;
+  object-fit: cover;
+}
+
+.imgdiv{
+  height: 500px;
+  object-fit: cover;
+
+}
+/* .nav-ul{
     display: flex;
     padding-top: 10px;
-}
-
+} */
+/* 
 nav-p{
     padding: 30px 30px;
     color: var(--primarycolor);
    
-}  
+}   */
 
-nav-div{
+/* nav-div{
     padding-top: 10px;
     margin-left: 40px;
-}
+} */
 
 
 .nav-ul li{
@@ -63,25 +82,25 @@ nav-div{
 
 }
 
-.nav-ul li a{
+/* .nav-ul li a{
     color: var(--primarycolor);
     text-decoration: none;
    padding: 30px 30px;
    
-}
-.form{
+} */
+/* .form{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 margin-top: 50px;
-}
+}*/
 
 .navigation-list-li{
     list-style-type: none;
     margin-top: 20px;
    
-}
+} 
 .navigation-list{
     display: flex;
     flex-direction:column; 
@@ -89,6 +108,23 @@ margin-top: 50px;
     justify-content: center;
 }
 
-#input-field{
+.doneBtn {
+ 
+  border-radius: 8px;
+  outline: none;
+  margin-left:2px;
+  box-shadow: none;
+  border: none; 
+}
+
+/* #input-field{
    width: 30%; 
 }
+
+@media (max-width: 768px){
+  #input-field{
+    width: 80%; 
+ }
+
+
+} */

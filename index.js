@@ -1,36 +1,44 @@
+let input = document.querySelector("#input-field");
 
-function editTodo(e){
-    let btnclicked = eventobject.target;
-   let li= btnclicked.parentNode;
-    let forminput = li.querySelector("#input-field");
-    let label=li.querySelector("span");
-    containsClass=li.classList.add("editMode");
-    if(containsClass){
+function editTodo(event){
+    let editButtonClicked = event.target
+    let li = editButtonClicked.parentNode.parentNode;
+    let child = li.childNodes[2].innerHTML
+    alert(child);
+    input.value = child;
+    let newbtn = document.createElement("button");
+    newbtn.innerHTML = `<button class="  btn btn-primary">Edit Task</button>`;
+    newbtn.classList.add("doneBtn")
+    li.append(newbtn);
+    editButtonClicked.disabled = true;
+    newbtn.addEventListener("click", doThis)
+    function doThis(){
+    let spanny = li.childNodes[2]
+    spanny.innerHTML = input.value
+    console.log(spanny.innerHTML)
+    input.value = ""
+    editButtonClicked.disabled = false
+    newbtn.remove()
 
-		//switch to .editmode
-		//label becomes the inputs value.
-			label.innerText=forminput.value;
-		}else{
-			forminput.value=label.innerText;
-		}
-
-		//toggle .editmode on the parent.
-		listItem.classList.toggle("editMode");
 }
-
-
-    // alert("i am editing")
-    // let edit = e.target;
-    // let selectedTask = e.parentElement.parentElement;
-    // edit.value = selectedTask.children[0].innerHTML;
-    // deleteTodo(e);
+   
+    }
 
 
 function deleteTodo(eventobject){
-    let btnclicked = eventobject.target;
-   let li= btnclicked.parentNode;
-    li.remove();
-    // confirm("are you sure yo want to delete?")
+    let ask = prompt("are you sure you want to delete?");
+    if(ask === "yes"){
+        let btnclicked = eventobject.target;
+        let li= btnclicked.parentNode.parentNode;
+         li.remove();
+         alert("deleted!")
+    }
+
+    else{
+        alert("respond with a Yes or No")
+    }
+   
+    
 }
 
 
@@ -57,15 +65,18 @@ function showNavigation(todo){
                  <li class="text-center">
                     <input type="checkbox" class="me-1"/><span>${todo}</span>
 
-                    <button class =" editButton btn btn-primary">Edit</button>
+                    <button class =" editButton btn btn-primary">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    </button>
 
-                    <button class=" deleteButton btn btn-danger">Delete</button>
+                    <button class=" deleteButton btn btn-danger">
+                    <i class="far fa-trash-alt"></i></button>
                 </li>`
 
     Navigationlist.appendChild(new__li);
     new__li.classList.add("navigation-list-li");
     DeleteButton();
-    EditButton()
+    EditButton();
 
 
 }

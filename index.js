@@ -1,4 +1,8 @@
-let input = document.querySelector("#input-field");
+let input = document.querySelector
+("#input-field");
+
+
+
 
 function editTodo(event){
 
@@ -35,35 +39,52 @@ function deleteTodo(eventobject){
     }
 
     else{
-        alert("respond with a Yes or No")
+        alert("Not Deleted")
     }
    
     
 }
 
-
-function DeleteButton(){
-    const allDeleteButtons = document.querySelectorAll(".deleteButton");
-    console.log(allDeleteButtons);
-    const lastBtn = allDeleteButtons[allDeleteButtons.length - 1];
-    lastBtn.addEventListener("click", deleteTodo );
+function check(){
+    const allcheckbox = document.querySelectorAll(".checkbox");
+    console.log(allcheckbox);
+    const checkbox = allcheckbox[allcheckbox.length - 1];
+    checkbox.addEventListener("change", function(){
+        if(this.checked){
+    
+    let hello = document.querySelector(".list_item");
+    let mimie =hello.childNodes[2].innerHTML;
+   
+    mimie.classList.toggle("checkboxline ");
+    
+        }
+    })  
 }
 
-function EditButton(){
+
+function DeleteEdit(){
+    const allDeleteButtons = document.querySelectorAll(".deleteButton");
+    // console.log(allDeleteButtons);
+    const lastBtn = allDeleteButtons[allDeleteButtons.length - 1];
+    lastBtn.addEventListener("click", deleteTodo );
+
+    
     const allEditButtons = document.querySelectorAll(".editButton");
-    console.log(allEditButtons);
+    // console.log(allEditButtons);
     const lastButton = allEditButtons[allEditButtons.length - 1];
     lastButton.addEventListener("click", editTodo );  
+
+    
 }
 
 
 function showNavigation(todo){
     const Navigationlist = document.querySelector("#navigation-list");
-
+    
     const new__li =document.createElement("li");
     new__li.innerHTML = `
-                 <li class="text-center">
-                    <input type="checkbox" class="me-1"/><span>${todo}</span>
+                 <li class="text-center list_item">
+                    <input type="checkbox" class="me-1 checkbox" id="checkbox"/><span class="todospan">${todo}</span>
 
                     <button class =" editButton btn btn-primary">
                     <i class="fa-solid fa-pen-to-square"></i>
@@ -73,53 +94,32 @@ function showNavigation(todo){
                     <i class="far fa-trash-alt"></i></button>
                 </li>`
 
+                
+
     Navigationlist.appendChild(new__li);
     new__li.classList.add("navigation-list-li");
-    DeleteButton();
-    EditButton();
+    
+    DeleteEdit()
+    check();
 
 
 }
 
-// localStorage.setItem("name", "Chris");
-    
-// let myName = localStorage.getItem("name");
-// myName;
-
-// localStorage.removeItem("name");
-// myName = localStorage.getItem("name");
-// myName;
 
 function formHandler(event){
-    event.preventDefault();
-    const inputfield = document.querySelector("#input-field").value;
 
+    event.preventDefault();
+    
+    const inputfield = document.querySelector("#input-field").value;
+   
     showNavigation(inputfield);
     
 
 }
 
-let clearbtn = document.querySelector(".clear-btn")
 
-function clearUp(){
-input.value = " "
-}
-
-
-// clearbtn.addEventListener("click", clearUp)
 
 const formdata = document.querySelector("#form");
 formdata.addEventListener("submit", formHandler);
-const inputfield = document.querySelector("#input-field").value;
-// const mimie=""
-
-// if (typeof(Storage) !== "undefined") {
-//  let m=   localStorage.setItem("input","klr")
-
-//     localStorage.getItem(input);
-//   } else {
-//  console.log("  Sorry! No Web Storage support..") 
-//   }
-
-    
+  
 

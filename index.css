@@ -13,15 +13,29 @@
     --delete:red;
     --color:#00A774;
 }
+.heading{
+  color: var(--primarycolor);
+  background-image: linear-gradient(180.96deg, #336975 0.82%, #00a774 129.1%);
+  backdrop-filter: blur(7px);
+}
+
+.logo-div{
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 20px;
+}
 
 .home{
   /* background-color: var(--color); */
   background-image: linear-gradient(180.96deg, #336975 0.82%, #00a774 129.1%);
 backdrop-filter: blur(7px);
-  
-  
 
 }
+.logo{
+  height: 40px;
+  object-fit: cover;
+} 
+
 .homediv{
   display: flex;
   flex-direction: column;
@@ -60,6 +74,10 @@ backdrop-filter: blur(7px);
 .home-btn:hover{
   background-image:linear-gradient(180.96deg, #336975 0.82%, #00a774 129.1%);
   backdrop-filter: blur(7px); ;
+}
+
+.checkboxline { 
+  text-decoration: line-through;
 }
 
 /* .wrapper{
@@ -116,6 +134,7 @@ color: var(--primarycolor);
     flex-direction:column; 
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .doneBtn {
@@ -155,7 +174,18 @@ color: var(--primarycolor);
   }
 }
 
-
+#checkbox::before {
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
 
  @media (max-width: 768px){
   
@@ -163,6 +193,7 @@ color: var(--primarycolor);
     text-align: center;
     
   }
+ 
 
   .home-inner{
     display: flex;
@@ -187,30 +218,35 @@ color: var(--primarycolor);
   }
 
   .imgdiv2{
-    display: none;
+    /* display: none; */
     height: 200px;
-    object-fit: contain;
+    object-fit: cover;
     position: absolute;
     top: 0;
-    margin-top: 100px;
+    margin-top: 120px;
     right: 0;
-    margin-right: 90px;
+   
+    width: 50%;
+    object-position: top;
   }
   
   .imgdiv{
     height: 150px;
     object-fit: cover;
-    margin-left: 80px;
-    width: 100%;
+    margin-top: 170px;
+    top: 0;
+    width: 50%;
     object-position: top;
+    position: absolute;
     
   
   }
   .form-ul{
     align-self: center;
+    margin-top: 120px;
   }
   .form{
-    margin-top: 40px;
+    margin-top: 30px;
    
   }
 

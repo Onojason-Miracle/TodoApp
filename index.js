@@ -1,23 +1,23 @@
 let input = document.querySelector("#input-field");
 
 function editTodo(event){
-    let editButtonClicked = event.target
-    let li = editButtonClicked.parentNode.parentNode;
-    let child = li.childNodes[2].innerHTML
-    alert(child);
-    input.value = child;
+
+    let editbtn = event.target;
+    let list_item = editbtn.parentNode.parentNode;
+    let list_item_child = list_item.childNodes[2].innerHTML;
+    input.value = list_item_child;
     let newbtn = document.createElement("button");
     newbtn.innerHTML = `<button class="  btn btn-primary">Edit Task</button>`;
     newbtn.classList.add("doneBtn")
-    li.append(newbtn);
-    editButtonClicked.disabled = true;
+    list_item.append(newbtn);
+    editbtn.disabled = true;
     newbtn.addEventListener("click", doThis)
     function doThis(){
-    let spanny = li.childNodes[2]
-    spanny.innerHTML = input.value
-    console.log(spanny.innerHTML)
+    let span = list_item.childNodes[2]
+    span.innerHTML = input.value
+    console.log(span.innerHTML)
     input.value = ""
-    editButtonClicked.disabled = false
+    editbtn.disabled = false
     newbtn.remove()
 
 }
@@ -26,12 +26,12 @@ function editTodo(event){
 
 
 function deleteTodo(eventobject){
-    let ask = prompt("are you sure you want to delete?");
-    if(ask === "yes"){
+    let ask = confirm("are you sure you want to delete?");
+    if(ask === true){
         let btnclicked = eventobject.target;
         let li= btnclicked.parentNode.parentNode;
          li.remove();
-         alert("deleted!")
+         
     }
 
     else{
@@ -111,15 +111,15 @@ input.value = " "
 const formdata = document.querySelector("#form");
 formdata.addEventListener("submit", formHandler);
 const inputfield = document.querySelector("#input-field").value;
-const mimie=""
+// const mimie=""
 
-if (typeof(Storage) !== "undefined") {
- let m=   localStorage.setItem("input","klr")
-//  alert(m);
-    localStorage.getItem(input);
-  } else {
- console.log("  Sorry! No Web Storage support..") 
-  }
+// if (typeof(Storage) !== "undefined") {
+//  let m=   localStorage.setItem("input","klr")
+
+//     localStorage.getItem(input);
+//   } else {
+//  console.log("  Sorry! No Web Storage support..") 
+//   }
 
     
 

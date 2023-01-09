@@ -34,7 +34,22 @@ backdrop-filter: blur(7px);
 .logo{
   height: 40px;
   object-fit: cover;
+
 } 
+.home-logo{
+  animation-name:App-logo-spin ;
+  animation-duration: infinite;
+  /* animation:  infinite 20s linear */
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 .homediv{
   display: flex;
@@ -187,6 +202,13 @@ color: var(--primarycolor);
   width: 7px;
 }
 
+.footer{
+  margin-top: 40px;
+  color: #fff;
+}
+
+
+
  @media (max-width: 768px){
   
   .homediv h3{
@@ -256,4 +278,9 @@ color: var(--primarycolor);
     padding-top: 30px;
   }
 
+  .footer{
+    margin-top: 90px;
+    color: #fff;
+    text-align: center;
+  }
 } 
